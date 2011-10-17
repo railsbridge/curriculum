@@ -33,6 +33,8 @@ class RailsBridge < Sinatra::Base
       lesson["section_content"] ||= ""
       lesson["skip_nav"] ||= false
       lesson
+    rescue TypeError => e
+      raise "Error loading lesson #{n}"
     end
 
     def nav n
@@ -43,7 +45,8 @@ class RailsBridge < Sinatra::Base
       r << "<a href=\"/#{befor}\">Prev Lesson</a>" if lesson_path befor
       r << "<a href=\"/toc\">TOC</a>"
       r << "<a href=\"/#{after}\">Next Lesson</a>" if lesson_path after
-      r.join " | "
+      links = r.join(" | ")
+      "<div class='nav'>#{links}</div>"
     end
   end
 
@@ -61,6 +64,10 @@ class RailsBridge < Sinatra::Base
       :lessons => lessons,
       :subtitle => "Table of Contents"
     }
+  end
+
+  get '/favicon.ico' do
+    halt 404
   end
 
   get '/:id' do
