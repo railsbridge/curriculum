@@ -39,6 +39,7 @@ content: |
   Add this to a file called ~/.irbrc:
 
   <pre class="code">
+  :::ruby
   class Object
     def pim inherited = false
       self.class.public_instance_methods(inherited).sort -

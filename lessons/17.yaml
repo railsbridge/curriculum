@@ -15,6 +15,7 @@ steps: |
   method (it looks like this):
   
   <pre class="code">
+  :::ruby
   def create
     @topic = Topic.new(params[:topic])
 
@@ -33,12 +34,14 @@ steps: |
   Change the line:
 
   <pre class="code">
+  :::ruby
   format.html { redirect_to @topic, :notice => 'Topic was successfully created.' }
   </pre>
 
   so that the file looks like this:
   
   <pre class="code">
+  :::ruby
   def create
     @topic = Topic.new(params[:topic])
 
