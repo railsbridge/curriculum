@@ -27,7 +27,7 @@ steps: |
   
   <pre class="code">
   :::ruby
-  class VotesController < ApplicationController
+  class VotesController &lt; ApplicationController
     def create
       topic = Topic.find(params[:topic_id])
       vote = topic.votes.build
