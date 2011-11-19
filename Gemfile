@@ -8,6 +8,3 @@ gem "rdiscount"
 gem 'rack-codehighlighter'
 gem 'coderay'
 
-group :development do
-  gem "shotgun"
-end
