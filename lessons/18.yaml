@@ -14,12 +14,14 @@ steps: |
   like this:
   
   <pre class="code">
+  :::erb
   &lt;td>&lt;%= topic.description %>&lt;/td>
   </pre>
   
   Also delete the line that looks like this:
   
   <pre class="code">
+  :::erb
   &lt;th>Description&lt;/th>
   </pre>
   
@@ -29,24 +31,28 @@ steps: |
   line:
   
   <pre class="code">
+  :::erb
   &lt;td>&lt;%= topic.title %>&lt;/td>
   </pre>
   
   with this:
   
   <pre class="code">
+  :::erb
   &lt;td>&lt;%= link_to topic.title, topic %>&lt;/td>
   </pre>
 
 explanation: |
 
   <pre class="code">
+  :::erb
   &lt;td><%= topic.description %>&lt;/td>
   </pre>
 
   This line was getting the description using .description and just printing it out
 
   <pre class="code">
+  :::erb
   &lt;th>Description&lt;/th>
   </pre>
 
@@ -57,6 +63,7 @@ explanation: |
 
 
   <pre class="code">
+  :::erb
   &lt;td><%= link_to topic.title, topic %>&lt;/td>
   </pre>
 

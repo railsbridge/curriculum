@@ -9,6 +9,7 @@ steps: |
   Edit `app/views/topics/index.html.erb` so that the bottom loop looks like this:
   
   <pre class="code">
+  :::erb
   &lt;% @topics.each do |topic| %>
     &lt;tr>
       &lt;td>&lt;%= topic.title %>&lt;/td>
@@ -25,6 +26,7 @@ steps: |
   Add the following method to `Vote` in `app/controllers/votes_controller.rb`:
   
   <pre class="code">
+  :::ruby
   class VotesController < ApplicationController
     def create
       topic = Topic.find(params[:topic_id])
@@ -43,6 +45,7 @@ explanation: |
   First we added this line to `app/views/topics/index.html.erb`
   
   <pre class="code">
+  :::erb
   &lt;td>&lt;%= button_to '+1', votes_path(:topic_id => topic.id), :method => :post %>&lt;/td>
   </pre>
   

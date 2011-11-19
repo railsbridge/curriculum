@@ -13,7 +13,8 @@ steps: |
   Edit app/models/topic.rb so that it looks like this:
   
   <pre class="code">
-  class Topic < ActiveRecord::Base
+  :::ruby
+  class Topic &lt; ActiveRecord::Base
     has_many :votes
   end
   </pre>
@@ -21,7 +22,8 @@ steps: |
   Edit app/models/vote.rb so that it looks like this:
   
   <pre class="code">
-  class Vote < ActiveRecord::Base
+  :::ruby
+  class Vote &lt; ActiveRecord::Base
     belongs_to :topic
   end
   </pre>
