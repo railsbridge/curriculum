@@ -12,30 +12,20 @@ goal: |
 steps: |
   
   Open `app/controllers/topics_controller.rb` and look at the create
-  method (it looks like this):
-  
-  <pre class="code">
-  :::ruby
-  def create
-    @topic = Topic.new(params[:topic])
+  method. 
 
-    respond_to do |format|
-      if @topic.save
-        format.html { redirect_to @topic, :notice => 'Topic was successfully created.' }
-        format.json { render :json => @topic, :status => :created, :location => @topic }
-      else
-        format.html { render :action => "new" }
-        format.json { render :json => @topic.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-  </pre>
-  
-  Change the line:
+  Find the line:
 
   <pre class="code">
   :::ruby
   format.html { redirect_to @topic, :notice => 'Topic was successfully created.' }
+  </pre>
+
+  and change "@topic" to "topics_path" like this:
+
+  <pre class="code">
+  :::ruby
+  format.html { redirect_to topics_path, :notice => 'Topic was successfully created.' }
   </pre>
 
   so that the file looks like this:
@@ -57,11 +47,11 @@ steps: |
   end
   </pre>
   
-  Look at it at [http://localhost:3000](http://localhost:3000).
+  Look at it at <http://localhost:3000>.
 
 explanation: |
   
   * `format.html { redirect_to topics_path, :notice => 'Topic was successfully created.' }`:
     * `format.html` means that the server should send html back to the browser
-    * `redirect_to topics_path` means show the topics list page when we're done creating a topic
+    * `redirect_to topics_path` means show the **topics list page** when we're done creating a topic
     * `:notice => 'Topic was successfully created.'` puts the message into the flash so it will be displayed on the topics list
