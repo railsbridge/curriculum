@@ -36,23 +36,11 @@ content: |
   that having an interactive live session with ruby is invaluable. You
   can learn a lot from it.
 
-  Add this to a file called ~/.irbrc:
-
-  <pre class="code">
-  :::ruby
-  class Object
-    def pim inherited = false
-      self.class.public_instance_methods(inherited).sort -
-        Object.public_instance_methods
-    end
-  end
-  </pre>
-
-  Now you can do stuff like:
+  You can do stuff like:
 
       $ irb
-      >> "blah".pim
-      => ["%", "*", "+", "<<", "<=>", "[]", "[]=", "bytes", "bytesize", ...]
+      >> "blah".methods
+      => [:<=>, :==, :===, :eql?, :hash, :casecmp, :+, :*, :%, :[], :[]=, :insert, :length, :size...]
 
   All of these methods are available for any string. You can then use
   `ri` to look up the method documentation. It is a great way to find goodies!
