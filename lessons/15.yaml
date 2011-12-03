@@ -3,6 +3,7 @@ steps: |
   
   In your handy-dandy terminal, try:
   
+      $ rake assets:precompile
       $ git add .
       $ git commit -m "Added votes"
       $ git push heroku master
@@ -16,5 +17,6 @@ goal: |
 goal_title: Commit and push to heroku
 explanation: |
   
-  Again with the pushing and the remote migration... By this time it
-  should be fairly old hat.
+  We must precompile the assets again, since they changed when we added the
+  votes resource. Now we can commit our changes, push them out and run the
+  remote migration... By this time it should be fairly old hat.
